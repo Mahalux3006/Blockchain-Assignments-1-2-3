@@ -1,0 +1,47 @@
+Assignment 1:
+
+This contract contains a single function print() which is public and pure.
+The print() function returns a string with the value "Hello World!".
+As it is marked as pure, it means that this function does not modify the contract's state or read from it.
+This contract manages project funding.
+It contains two public mappings: projectFunding and projectCost. These mappings associate a project ID with the amount of funding it has received and its total cost, respectively.
+The setProjectCost function allows setting the cost of a project.
+The fundProject function allows funding a project by adding the specified amount to its funding.
+The remainingFundingRequired function calculates and returns the remaining funding required for a project. 
+It checks if the project's funding is less than its cost and calculates the difference if necessary.
+The external keyword specifies that these functions can only be called from outside the contract, typically by other contracts or externally owned accounts.
+
+Overall, the HelloWorld contract provides a simple "Hello World!" string, while the ProjectFunding contract manages project funding by setting project costs, 
+accepting funds for projects, and calculating remaining funding required for projects.
+
+---------------------------------------------------------------------------------
+Assignmwnt 2:
+
+In this Solidity smart contract:
+
+The FundingProject contract is initialized with a funding goal.
+The fundProject function allows users to fund the project by sending Ether. It checks if the addition of the funding amount exceeds the funding goal.
+If it does not, the funds are added to the project and the last funder is updated.
+The withdrawExcessFunds function allows the owner of the contract to withdraw excess funds. 
+It transfers the excess funds to the last funder and sets the current funding back to the funding goal.
+
+Please note that this is a simplified example for demonstration purposes and may require additional features and security considerations for a production-level contract.
+Additionally, remember to thoroughly test your smart contracts before deploying them on the Ethereum mainnet.
+
+------------------------------------------------------------------------------------
+Assignment 3:
+
+In this updated version:
+
+I've added a commissionCollected variable to keep track of the commission collected by the system.
+In the fundProject function, when a user funds the project, 5% of the funding amount is deducted as commission, and the remaining amount is added to the project's current funding.
+The commission collected is also updated accordingly.
+I've added a new function withdrawCommission that allows the owner (system admin) to withdraw the commission collected by the system. When called,
+it transfers the commission amount to the owner's address and resets the commissionCollected variable to zero.
+
+With these modifications, the smart contract now includes functionality to collect a 5% commission on each funding and allows the system admin to withdraw the collected commission.
+
+-------------------------------------------------------------------------------------
+
+
+
